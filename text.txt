@@ -1,0 +1,10 @@
+my-manga-site/
+├─ index.html         ← homepage + chapter list
+├─ chapter1.html      ← first chapter
+├─ style.css          ← shared styles
+└─ chapters/
+   └─ ch1/
+      ├─ page1.webp
+      ├─ page2.webp
+      ├─ page3.webp
+      └─ ... (more pages)
