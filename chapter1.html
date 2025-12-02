@@ -8,6 +8,29 @@
 
   <!-- Local styles specific to this page -->
   <style>
+    /* Top links under header */
+    .top-links {
+      margin: 4px 16px 0;
+      text-align: right;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .top-links a {
+      margin-left: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .top-links {
+        text-align: center;
+        margin: 6px 8px 0;
+      }
+      .top-links a {
+        display: inline-block;
+        margin: 2px 6px;
+      }
+    }
+
     /* Footer */
     footer.footer {
       margin-top: 32px;
@@ -15,6 +38,14 @@
       text-align: center;
       font-size: 0.85rem;
       opacity: 0.8;
+    }
+
+    .footer-links {
+      margin-top: 6px;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
     }
 
     /* Scroll-to-top button */
@@ -49,6 +80,13 @@
       </nav>
     </div>
   </header>
+
+  <!-- Top link row (author, site, discord) -->
+  <div class="top-links">
+    <a href="https://www.instagram.com/maxpattarelli/" target="_blank" rel="noopener">Manga Author</a> ·
+    <a href="https://capomiyo.carrd.co/" target="_blank" rel="noopener">Capo's Site</a> ·
+    <a href="https://discord.gg/34WKDS7GeR" target="_blank" rel="noopener">Join our community</a>
+  </div>
 
   <!-- Main content -->
   <main class="main">
@@ -85,6 +123,11 @@
   <footer class="footer">
     <div>© 2025 Capo Miyo – Fanmade Manga by Max Pattarelli</div>
     <div>Site designed by Capo Miyo</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/maxpattarelli/" target="_blank" rel="noopener">Manga Author</a> ·
+      <a href="https://capomiyo.carrd.co/" target="_blank" rel="noopener">Capo's Site</a> ·
+      <a href="https://discord.gg/34WKDS7GeR" target="_blank" rel="noopener">Join our community</a>
+    </div>
   </footer>
 
   <!-- Scroll-to-top Button -->
