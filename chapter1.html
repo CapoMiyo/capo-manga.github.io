@@ -5,6 +5,38 @@
   <title>My Mafia Boss Can't be This ITALIAN! – Capitolo Uno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Local styles specific to this page -->
+  <style>
+    /* Footer */
+    footer.footer {
+      margin-top: 32px;
+      padding: 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* Scroll-to-top button */
+    #scroll-top-btn {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(5, 5, 9, 0.9);
+      color: #f5f5f5;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+
+    #scroll-top-btn:hover {
+      background: rgba(20, 20, 30, 0.95);
+    }
+  </style>
 </head>
 <body>
   <!-- Top bar -->
@@ -22,11 +54,9 @@
   <main class="main">
     <section class="card">
       <h1 class="chapter-title">Chapter 1 – Capitolo Uno</h1>
-      <p class="chapter-info">
-      </p>
+      <p class="chapter-info"></p>
 
       <div class="chapter-images">
-        <!-- Put your actual pages here -->
         <img src="CapoManga_001.png" alt="Chapter 1 page 1" />
         <img src="CapoManga_002.png" alt="Chapter 1 page 2" />
         <img src="CapoManga_003.png" alt="Chapter 1 page 3" />
@@ -46,11 +76,37 @@
       <div class="chapter-nav">
         <span style="opacity:0.4;">← Previous Chapter</span>
         <a href="index.html#chapters">Back to Chapter List</a>
-        <!-- Change "chapter2.html" once you create it -->
         <a href="chapter2.html">Next Chapter →</a>
       </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>© 2025 Capo Miyo – Fanmade Manga by Max Pattarelli</div>
+    <div>Site designed by Capo Miyo</div>
+  </footer>
+
+  <!-- Scroll-to-top Button -->
+  <button id="scroll-top-btn" type="button">↑ Top</button>
+
+  <!-- JS for scroll-to-top -->
+  <script>
+    (function () {
+      const btn = document.getElementById('scroll-top-btn');
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 </body>
 </html>
-
