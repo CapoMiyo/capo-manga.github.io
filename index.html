@@ -116,11 +116,24 @@
       background: rgba(20, 20, 30, 0.95);
     }
 
-    /* Chapter list with thumbnail */
+    /* Chapter list layout */
     .chapter-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
+      padding: 8px 0;
+    }
+
+    /* Space between items */
+    .chapter-list li + li {
+      margin-top: 10px;
+    }
+
+    /* Vertical accent line for released chapters */
+    .chapter-released {
+      border-left: 3px solid #ff547d;
+      padding-left: 10px;
+      border-radius: 4px;
     }
 
     .chapter-thumb {
@@ -137,8 +150,9 @@
     }
 
     .chapter-soon {
-      opacity: 0.7;
+      opacity: 0.75;
       font-style: italic;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -216,8 +230,8 @@
             </div>
           </li>
 
-          <!-- Chapter 1 with circular thumbnail -->
-          <li>
+          <!-- Chapter 1 with circular thumbnail + vertical accent line -->
+          <li class="chapter-released">
             <img src="chapter-1.webp" alt="Chapter 1 thumbnail" class="chapter-thumb" />
             <div class="chapter-list-content">
               <a href="chapter1.html">Chapter 1 – Capitolo Uno</a><br />
