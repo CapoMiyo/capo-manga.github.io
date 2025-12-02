@@ -13,15 +13,15 @@
   <!-- Open Graph preview (Discord, Facebook, WhatsApp, etc.) -->
   <meta property="og:title" content="My Mafia Boss Can't be This ITALIAN! – Fanmade Manga" />
   <meta property="og:description" content="A fanmade Capo Miyo manga created by Max Pattarelli. Read Chapter 1 now!" />
-  <meta property="og:image" content="https://capomiyo.github.io/capo-manga.github.io/CapoManga_cover.png" />
-  <meta property="og:url" content="https://capomiyo.github.io/capo-manga.github.io/" />
+  <meta property="og:image" content="https://capomiyo.github.io/capo-manga/CapoManga_cover.png" />
+  <meta property="og:url" content="https://capomiyo.github.io/capo-manga/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter / X card preview -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="My Mafia Boss Can't be This ITALIAN! – Fanmade Manga" />
   <meta name="twitter:description" content="A fanmade Capo Miyo manga created by Max Pattarelli. Read Chapter 1 now!" />
-  <meta name="twitter:image" content="https://capomiyo.github.io/capo-manga.github.io/CapoManga_cover.png" />
+  <meta name="twitter:image" content="https://capomiyo.github.io/capo-manga/CapoManga_cover.png" />
 
   <!-- ========================== -->
   <!-- 📊 GOATCOUNTER ANALYTICS  -->
@@ -29,6 +29,93 @@
   <script data-goatcounter="https://capomiyi.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
+  <!-- ========================== -->
+  <!-- 🎨 LOCAL STYLES (INDEX)   -->
+  <!-- ========================== -->
+  <style>
+    /* Hero layout refinements for mobile */
+    .hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .hero-cover {
+      flex: 0 0 260px;
+      max-width: 100%;
+    }
+
+    .hero-text {
+      flex: 1 1 240px;
+      min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-text {
+        width: 100%;
+      }
+    }
+
+    /* Visit counter banner */
+    .visit-banner {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      opacity: 0.85;
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .visit-label {
+      font-weight: 500;
+    }
+
+    #visit-count {
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer.footer {
+      margin-top: 32px;
+      padding: 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      margin-top: 6px;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
+    }
+
+    /* Scroll-to-top button */
+    #scroll-top-btn {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(5, 5, 9, 0.9);
+      color: #f5f5f5;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+
+    #scroll-top-btn:hover {
+      background: rgba(20, 20, 30, 0.95);
+    }
+  </style>
 </head>
 <body>
 
@@ -45,12 +132,17 @@
   <!-- Main content -->
   <main class="main">
 
+    <!-- VISIT COUNTER -->
+    <div class="visit-banner">
+      <span class="visit-label">Visits:</span>
+      <span id="visit-count">—</span>
+    </div>
+
     <!-- HERO + COVER -->
     <section class="card">
-      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start;">
-        
+      <div class="hero-layout">
         <!-- Cover -->
-        <div style="flex:0 0 260px; max-width:100%;">
+        <div class="hero-cover">
           <img
             src="CapoManga_cover.png"
             alt="My Mafia Boss Can't be This ITALIAN! – cover"
@@ -59,7 +151,7 @@
         </div>
 
         <!-- Text / info -->
-        <div style="flex:1 1 240px; min-width:0;">
+        <div class="hero-text">
           <h1 class="hero-title">My Mafia Boss Can't be This ITALIAN!</h1>
           <p class="hero-subtitle">
             A Capo Miyo fanmade manga by Max Pattarelli<br />
@@ -99,7 +191,7 @@
       </div>
     </section>
 
- <!-- PROTON VPN "AD" -->
+    <!-- PROTON VPN "AD" -->
     <section style="margin-top: 24px;">
       <div class="card" style="text-align:center;">
         <p class="hero-subtitle" style="margin-bottom: 12px;">
@@ -118,9 +210,56 @@
       </div>
     </section>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© 2025 Capo Miyo – Fanmade Manga by Max Pattarelli</div>
+    <div>Site by Capo Miyo</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/maxpattarelli/" target="_blank" rel="noopener">Manga Author</a> ·
+      <a href="https://capomiyo.carrd.co/" target="_blank" rel="noopener">Capo's Site</a>
+    </div>
+  </footer>
+
+  <!-- SCROLL-TO-TOP BUTTON -->
+  <button id="scroll-top-btn" type="button">↑ Top</button>
+
+  <!-- JS: scroll-to-top + GoatCounter visit display -->
+  <script>
+    // Scroll-to-top button behavior
+    (function () {
+      var btn = document.getElementById('scroll-top-btn');
+      if (!btn) return;
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // GoatCounter TOTAL visits display
+    (function () {
+      var el = document.getElementById('visit-count');
+      if (!el) return;
+
+      // NOTE: make sure in GoatCounter settings you enabled:
+      // "Allow adding visitor counts on your website"
+      fetch('https://capomiyi.goatcounter.com/counter/TOTAL.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          el.textContent = data.count || data.count_unique || '0';
+        })
+        .catch(function () {
+          el.textContent = '0';
+        });
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
